@@ -22,7 +22,7 @@ export default function App() {
     <LinkProvider>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto shadow-xl rounded-lg overflow-hidden dark:bg-gray-800">
-          <div className="grid grid-cols-1 md:grid-cols-2 bg-white dark:bg-gray-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white dark:bg-gray-800">
             {/* Columna izquierda: Agregar enlaces y categorías */}
             <aside className="p-8 bg-gradient-to-br from-indigo-600 to-purple-600 text-white flex flex-col justify-between">
               <div>
@@ -32,7 +32,6 @@ export default function App() {
                 </h2>
                 <AddLinkForm setIsCategoryModalOpen={setIsCategoryModalOpen} />
               </div>
-
               <div className="mt-8 text-sm text-indigo-200 dark:text-indigo-300">
                 <p>&copy; {new Date().getFullYear()} Tu Aplicación de Enlaces</p>
               </div>
@@ -44,7 +43,6 @@ export default function App() {
                 <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 tracking-wide">
                   <span className="border-b-2 border-indigo-500 pb-1">Tus Enlaces Guardados</span>
                 </h2>
-                {/* Botón para filtrar */}
                 <button
                   onClick={() => setIsFilterModalOpen(true)}
                   className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-indigo-700 dark:hover:bg-indigo-800"

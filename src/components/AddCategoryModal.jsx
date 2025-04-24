@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import { useLinks } from '../context/LinkContext';
 
 export default function AddCategoryModal({ isOpen, onClose }) {
+  const { addCategory } = useLinks();  // Obtener addCategory del contexto
   const [categoryName, setCategoryName] = useState('');
   const [categoryColor, setCategoryColor] = useState('#4C51BF');
 
   const handleCategorySubmit = () => {
     if (categoryName.trim() && categoryColor) {
-      // Lógica para guardar la categoría
-      console.log("Categoría agregada: ", categoryName, categoryColor);
+      addCategory({ name: categoryName, color: categoryColor }); // <- Se guarda
       onClose();
     }
   };
